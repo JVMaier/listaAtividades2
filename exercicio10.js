@@ -18,7 +18,7 @@ function calculateStatistics() {
   do {
     const showNumber = parseInt(prompt("Digite um numero: "));
     if (isNaN(showNumber) || typeof showNumber !== "number") {
-      console.error("Invalid input. Please enter a valid number.");
+      console.error("Valor invalido!");
       continue;
     }
 
