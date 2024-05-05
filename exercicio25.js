@@ -11,16 +11,26 @@ function gerarMatrizAleatoria() {
   for (let i = 0; i < rows; i++) {
     matrix.push([]);
     for (let j = 0; j < cols; j++) {
-      // Gera um valor aleatório entre 0 e o maxValue, inclusive
       matrix[i][j] = Math.floor(Math.random() * maxValue);
     }
   }
   return matrix;
 }
 
-// Exemplo de utilização:
-// Valor máximo dos elementos
-
 const matriz = gerarMatrizAleatoria();
-console.log("Matriz aleatória:");
-console.log(matriz);
+
+function sumColuns(matriz) {
+  let somas = new Array(matriz[0].length).fill(0);
+
+  for (let j = 0; j < matriz[0].length; j++) {
+    for (let i = 0; i < matriz.length; i++) {
+      somas[j] += matriz[i][j];
+    }
+  }
+
+  return somas;
+}
+
+const somasColunas = sumColuns(matriz);
+console.log("A soma de cada uma das colunas: ")
+console.log(somasColunas);

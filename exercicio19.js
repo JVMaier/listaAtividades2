@@ -5,6 +5,18 @@
 
 const prompt = require("prompt-sync")();
 
+function isValidTime(hora, minuto, segundo) {
+  return (
+    hora >= 0 &&
+    hora <= 23 &&
+    minuto >= 0 &&
+    minuto <= 59 &&
+    segundo >= 0 &&
+    segundo <= 59
+  );
+}
+
+
 function validateTime(numero) {
   let horario;
   let hora, minuto, segundo;
@@ -22,16 +34,6 @@ function validateTime(numero) {
   return horario;
 }
 
-function isValidTime(hora, minuto, segundo) {
-    return (
-      hora >= 0 &&
-      hora <= 23 &&
-      minuto >= 0 &&
-      minuto <= 59 &&
-      segundo >= 0 &&
-      segundo <= 59
-    );
-  }
 
 function main() {
   const hours = [];
