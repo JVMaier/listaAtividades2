@@ -3,45 +3,63 @@
     P[1..3,1..5].
 */
 
-function gerarMatrizAleatoria() {
+function generateArrayRandomA() {
   const rows = 3;
   const cols = 5;
   const maxValue = 100;
   const A = [];
-  const B = [];
   for (let i = 0; i < rows; i++) {
     A.push([]);
-    B.push([]);
     for (let j = 0; j < cols; j++) {
       A[i][j] = Math.floor(Math.random() * maxValue);
+    }
+  }
+  return A;
+}
+
+function generateArrayRandomB() {
+  const rows = 5;
+  const cols = 3;
+  const maxValue = 100;
+  const B = [];
+  for (let i = 0; i < rows; i++) {
+    B.push([]);
+    for (let j = 0; j < cols; j++) {
       B[i][j] = Math.floor(Math.random() * maxValue);
     }
   }
-  return { A, B };
+  return B;
 }
 
-const matrizes = gerarMatrizAleatoria();
-const matrizA = matrizes.A;
-const matrizB = matrizes.B;
+const matricesA = generateArrayRandomA();
+const matricesB = generateArrayRandomB();
 console.log("Matrizes geradas: ");
-console.log(matrizA);
+console.log(matricesA);
 console.log("----------------------");
-console.log(matrizB);
+console.log(matricesB);
 
-function produtoMatrizes(matrizA, matrizB) {
+function productMatrices(matricesA, matricesB) {
+  const rowsA = matricesA.length;
+  const colsA = matricesA[0].length;
+  const colsB = matricesB[0].length;
+
   const P = [];
 
-  for (let i = 0; i < matrizA.length; i++) {
+  for (let i = 0; i < rowsA; i++) {
     P.push([]);
-    for (let j = 0; j < matrizA[i].length; j++) {
-      P[i][j] = matrizA[i][j] * matrizB[i][j];
+    for (let j = 0; j < colsB; j++) {
+      let sum = 0;
+      for (let k = 0; k < colsA; k++) {
+        sum += matricesA[i][k] * matricesB[k][j];
+      }
+      P[i][j] = sum;
     }
   }
 
   return P;
 }
 
-const produto = produtoMatrizes(matrizA, matrizB);
+const product = productMatrices(matricesA, matricesB);
 console.log("----------------------");
-console.log("As matrizes multiplicadas: ");
-console.log(produto);
+console.log("O produto das matrizes: ");
+console.log(product);

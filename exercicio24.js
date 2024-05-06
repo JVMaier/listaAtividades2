@@ -3,7 +3,7 @@
     quantidade de elementos negativos da linha correspondente de M.
 */
 
-function createIdentityMatrix() {
+function createIdentityVector() {
   const M = [
     [1, -2, 3, -4, 5, -6, 7, -8],
     [-1, 2, -3, 4, -5, 6, -7, 8],
@@ -25,9 +25,8 @@ function createIdentityMatrix() {
 
     C.push(countNegative);
   }
-  
 
   console.log(C);
 }
 
-createIdentityMatrix();
+createIdentityVector();

@@ -6,9 +6,9 @@
 
 const prompt = require("prompt-sync")();
 
-let valorA;
+let valueA;
 
-function gerarMatrizAleatoria() {
+function generateArrayRandom() {
   const rows = 6;
   const cols = 6;
   const maxValue = 100;
@@ -22,41 +22,41 @@ function gerarMatrizAleatoria() {
   return matrix;
 }
 
-const matriz = gerarMatrizAleatoria();
+const matriz = generateArrayRandom();
 console.log("Matriz gerada: ");
 console.log(matriz);
 
-function multValor(matriz) {
+function multValue(matriz) {
   const V = [];
 
-  valorA = parseInt(prompt("Digite o valor para multiplicar a matriz: "));
+  valueA = parseInt(prompt("Digite o valor para multiplicar a matriz: "));
 
   for (let i = 0; i < matriz.length; i++) {
     V.push([]);
     for (let j = 0; j < matriz[i].length; j++) {
-      V[i][j] = matriz[i][j] * valorA;
+      V[i][j] = matriz[i][j] * valueA;
     }
   }
 
   return V;
 }
 
-const produto = multValor(matriz);
+const product = multValue(matriz);
 // console.log(produto);
 
-function matrizToVetor(produto) {
-  const vetor = [];
+function matrizToVetor(product) {
+  const vector = [];
 
-  for (let i = 0; i < produto.length; i++) {
-    for (let j = 0; j < produto[i].length; j++) {
-      vetor.push(produto[i][j]);
+  for (let i = 0; i < product.length; i++) {
+    for (let j = 0; j < product[i].length; j++) {
+      vector.push(product[i][j]);
     }
   }
 
-  return vetor;
+  return vector;
 }
 
-const produt = matrizToVetor(produto);
+const produt = matrizToVetor(product);
 console.log("----------------------");
-console.log(`Matriz multiplicada por ${valorA} e transformada em Vetor`);
+console.log(`Matriz multiplicada por ${valueA} e transformada em Vetor`);
 console.log(produt);

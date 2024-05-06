@@ -3,13 +3,6 @@
     diagonal principal são iguais a 1 e os demais são nulos.
 */
 
-// function createMatrizMI(){
-
-//     const size = 7;
-//     let matrizId = [];
-
-// }
-
 function createIdentityMatrix() {
   const matrix = [];
   const size = 7;
@@ -19,7 +12,7 @@ function createIdentityMatrix() {
       matrix[i][j] = i === j ? 1 : 0;
     }
   }
-
+  
   for (let i = 0; i < matrix.length; i++) {
     console.log(matrix[i].join(" "));
   }

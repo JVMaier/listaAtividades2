@@ -5,15 +5,15 @@
 */
 
 function vector20Numbers() {
-    let vetor = [];
+    let vector = [];
     for (let i = 0; i < 20; i++) {
-        vetor.push(Math.floor(Math.random() * 100));
+        vector.push(Math.floor(Math.random() * 100));
     }
 
-    vetor.sort((a, b) => (a - b))
+    vector.sort((a, b) => (a - b))
 
     console.log("Números gerados:");
-    console.log(vetor);
+    console.log(vector);
 }
 
 vector20Numbers();

@@ -5,45 +5,45 @@
 
 const prompt = require("prompt-sync")();
 
-function isValidTime(hora, minuto, segundo) {
+function isValidTime(hour, min, sec) {
   return (
-    hora >= 0 &&
-    hora <= 23 &&
-    minuto >= 0 &&
-    minuto <= 59 &&
-    segundo >= 0 &&
-    segundo <= 59
+    hour >= 0 &&
+    hour <= 23 &&
+    min >= 0 &&
+    min <= 59 &&
+    sec >= 0 &&
+    sec <= 59
   );
 }
 
 
-function validateTime(numero) {
-  let horario;
-  let hora, minuto, segundo;
+function validateTime(num) {
+  let time;
+  let hour, min, sec;
   
   do {
-    horario = prompt(`Digite o ${numero + 1}º horário (HH:MM:SS): `);
-    [hora, minuto, segundo] = horario.split(":").map(Number);
+    time = prompt(`Digite o ${num + 1}º horário (HH:MM:SS): `);
+    [hour, min, sec] = time.split(":").map(Number);
 
-    if (!(isValidTime(hora, minuto, segundo))
+    if (!(isValidTime(hour, min, sec))
     ) {
       console.log("Horário inválido. Por favor, tente novamente.");
     }
-  } while (!(isValidTime(hora, minuto, segundo)));
+  } while (!(isValidTime(hour, min, sec)));
 
-  return horario;
+  return time;
 }
 
 
 function main() {
-  const hours = [];
+  const times = [];
   for (let i = 0; i < 5; i++) {
-    const hour = validateTime(i);
-    hours.push(hour);
+    const hours = validateTime(i);
+    times.push(hours);
   }
 
-  hours.forEach((hour) => {
-    console.log(hour);
+  times.forEach((hours) => {
+    console.log(hours);
   });
 }
 

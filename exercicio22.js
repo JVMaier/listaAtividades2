@@ -8,7 +8,7 @@
 
 const prompt = require("prompt-sync")();
 
-function calcularEstatisticas() {
+function calculateStatistics() {
   let totalSalary = 0;
   let totalSons = 0;
   let bigSalary = 0;
@@ -54,4 +54,4 @@ function calcularEstatisticas() {
   );
 }
 
-calcularEstatisticas();
+calculateStatistics();

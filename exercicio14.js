@@ -17,9 +17,6 @@ function personsNames() {
 
   console.log("Listagem dos nomes informados (ordem inversa):");
   console.log(namesList.reverse().join(", "));
-  //   for (let i = namesList.length - 1; i >= 0; i--) {
-  //     console.log(namesList[i]);
-  //   }
 }
 
 personsNames();

@@ -6,19 +6,19 @@
 
 const prompt = require("prompt-sync")();
 
-const alt = parseFloat(prompt("Digite sua altura no formato (M.CC): "));
+const height = parseFloat(prompt("Digite sua altura no formato (M.CC): "));
 const sex = prompt("Digite o seu sexo (M) para mulher e (H) para homem: ").toUpperCase();
 
-function idealWeight(alt, sex) {
+function idealWeight(height, sex) {
   let calculatedWeight = 0;
   if (sex === "M") {
-    calculatedWeight = 62.1 * alt - 44.7;
+    calculatedWeight = 62.1 * height - 44.7;
   } else if (sex === "H") {
-    calculatedWeight = 72.7 * alt - 58;
+    calculatedWeight = 72.7 * height - 58;
   } else {
     console.log("Valor invalido!");
   }
   console.log(`Seu peso ideal seria ${calculatedWeight.toFixed(2)}Kg`);
 }
 
-idealWeight(alt, sex);
+idealWeight(height, sex);

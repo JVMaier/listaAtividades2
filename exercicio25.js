@@ -3,7 +3,7 @@
     de cada coluna separadamente.
 */
 
-function gerarMatrizAleatoria() {
+function generateArrayRandom() {
   const rows = 15;
   const cols = 20;
   const maxValue = 100;
@@ -17,20 +17,20 @@ function gerarMatrizAleatoria() {
   return matrix;
 }
 
-const matriz = gerarMatrizAleatoria();
+const matriz = generateArrayRandom();
 
 function sumColuns(matriz) {
-  let somas = new Array(matriz[0].length).fill(0);
+  let sumColun = new Array(matriz[0].length).fill(0);
 
   for (let j = 0; j < matriz[0].length; j++) {
     for (let i = 0; i < matriz.length; i++) {
-      somas[j] += matriz[i][j];
+      sumColun[j] += matriz[i][j];
     }
   }
 
-  return somas;
+  return sumColun;
 }
 
-const somasColunas = sumColuns(matriz);
+const colunsSum = sumColuns(matriz);
 console.log("A soma de cada uma das colunas: ")
-console.log(somasColunas);
+console.log(colunsSum);

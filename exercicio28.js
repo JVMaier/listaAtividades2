@@ -5,7 +5,7 @@
     b) a soma dos elementos abaixo da diagonal principal;
 */
 
-function gerarMatrizAleatoria() {
+function generateArrayRandom() {
   const rows = 10;
   const cols = 10;
   const maxValue = 100;
@@ -19,46 +19,46 @@ function gerarMatrizAleatoria() {
   return matrix;
 }
 
-const matriz = gerarMatrizAleatoria();
+const matriz = generateArrayRandom();
 console.log("Matriz gerada: ");
 console.log(matriz);
 
-function somaDiagonalCima() {
-  let somaCima = 0;
+function sumDiagonalUp(matriz) {
+  let sumUp = 0;
 
   for (let i = 0; i < matriz.length; i++) {
     for (let j = 0; j < matriz[i].length; j++) {
       if (j > i) {
-        somaCima += matriz[i][j];
+        sumUp += matriz[i][j];
       }
     }
   }
 
-  return somaCima;
+  return sumUp;
 }
 
-function somaDiagonalBaixo() {
-  let somaBaixo = 0;
+function sumDiagonalLow(matriz) {
+  let sumLow = 0;
 
   for (let i = 0; i < matriz.length; i++) {
     for (let j = 0; j < matriz[i].length; j++) {
       if (i > j) {
-        somaBaixo += matriz[i][j];
+        sumLow += matriz[i][j];
       }
     }
   }
 
-  return somaBaixo;
+  return sumLow;
 }
 
-const somaAcimaDiagonal = somaDiagonalCima();
+const sumAboveDiagonal = sumDiagonalUp(matriz);
 console.log(
   "Soma dos elementos acima da diagonal principal: ",
-  somaAcimaDiagonal
+  sumAboveDiagonal
 );
 
-const somaAbaixoDiagonal = somaDiagonalBaixo();
+const sumBelowDiagonal = sumDiagonalLow(matriz);
 console.log(
   "Soma dos elementos abaixo da diagonal principal: ",
-  somaAbaixoDiagonal
+  sumBelowDiagonal
 );

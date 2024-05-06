@@ -54,22 +54,3 @@ console.log(
 console.log(
   `Foram cadastrados um total de ${countersWomens} Mulheres. E o salario das mulheres deu um total de R$${womenSalary}`
 );
-
-//Função para printar e mendagem de erro
-/*
-    function printResults([manSalary, womanSalary, manCount, womanCount]) {
-    console.log(
-        `Foram cadastrados um total de ${manCount} Homens. E o salario dos homens deu um total de R$${manSalary}`
-    );
-    console.log(
-        `Foram cadastrados um total de ${womanCount} Mulheres. E o salario das mulheres deu um total de R$${womanSalary}`
-    );
-    }
-
-    try {
-    const [manSalary, womanSalary, manCount, womanCount] = getTotalSalary();
-    printResults([manSalary, womanSalary, manCount, womanCount]);
-    } catch (error) {
-    console.error(error.message);
-    }
-*/

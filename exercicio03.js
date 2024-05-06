@@ -6,7 +6,7 @@
 
 const prompt = require("prompt-sync")();
 
-function ticketPrice() {
+function ticketPrices() {
   let distanceToTravel = parseFloat(
     prompt("Qual distância deseja percorrer em Km: ")
   );
@@ -24,4 +24,4 @@ function ticketPrice() {
   );
 }
 
-ticketPrice();
+ticketPrices();

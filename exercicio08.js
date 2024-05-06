@@ -50,7 +50,10 @@ const activityHours = parseFloat(prompt("Quantas horas de atividade física fora
 
 if (isNaN(activityHours) || activityHours < 0) {
   console.error("Valor invalido!");
-  process.exit(1);
+} else {
+  const [points, moneyEarned] = calculatePointsAndEarnings(activityHours);
+  console.log(`Você ganhou ${points} pontos este mês.`);
+  console.log(`E faturou R$ ${moneyEarned.toFixed(2)} este mês.`);
 }
 
 function calculatePointsAndEarnings(activityHours) {
@@ -68,7 +71,3 @@ function calculatePointsAndEarnings(activityHours) {
 
   return [points, moneyEarned];
 }
-
-const [points, moneyEarned] = calculatePointsAndEarnings(activityHours);
-console.log(`Você ganhou ${points} pontos este mês.`);
-console.log(`E faturou R$ ${moneyEarned.toFixed(2)} este mês.`);

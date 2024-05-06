@@ -11,7 +11,7 @@
     (Dicas: desconto de 12%, salário líquido é a diferença entre salário bruto e a redução do
     INSS).
 */
-const funcionarios = [
+const employees = [
     { matricula: 1, nome: "João", salarioBruto: 3000 },
     { matricula: 2, nome: "Maria", salarioBruto: 4000 },
     { matricula: 3, nome: "Pedro", salarioBruto: 2500 },
@@ -34,16 +34,16 @@ function calculateDiscount(salarioBruto){
     }
 }
 
-function generatePay(funcionario) {
-    const inssDiscount = calculateDiscount(funcionario.salarioBruto);
-    const netSalary = funcionario.salarioBruto - inssDiscount;
+function generatePay(employee) {
+    const inssDiscount = calculateDiscount(employee.salarioBruto);
+    const netSalary = employee.salarioBruto - inssDiscount;
 
-    console.log("Matrícula:", funcionario.matricula);
-    console.log("Nome:", funcionario.nome);
-    console.log("Salário bruto:", funcionario.salarioBruto);
+    console.log("Matrícula:", employee.matricula);
+    console.log("Nome:", employee.nome);
+    console.log("Salário bruto:", employee.salarioBruto);
     console.log("Dedução INSS:", inssDiscount);
     console.log("Salário líquido:", netSalary);
     console.log("---------------------------");
 }
 
-funcionarios.forEach(generatePay);
+employees.forEach(generatePay);

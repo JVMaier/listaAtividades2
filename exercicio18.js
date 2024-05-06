@@ -13,9 +13,9 @@ const employeeWage = parseInt(prompt("Digite o salário do empregado: "));
 
 function createRegis(employeeName, employeeRole, employeeWage) {
     const Employee = {
-        nome: employeeName,
-        cargo: employeeRole,
-        salario: employeeWage
+        name: employeeName,
+        role: employeeRole,
+        wage: employeeWage
     }
     console.log(Employee)
 }

@@ -7,7 +7,7 @@
     Escrever essas somas e a matriz.
 */
 
-function gerarMatrizAleatoria() {
+function generateArrayRandom() {
   const rows = 5;
   const cols = 5;
   const maxValue = 100;
@@ -21,45 +21,46 @@ function gerarMatrizAleatoria() {
   return matrix;
 }
 
-const matriz = gerarMatrizAleatoria();
+const M = generateArrayRandom();
 console.log("Matriz gerada: ");
-console.log(matriz);
+console.log(M);
 
-function somaLinha4(matriz) {
-  let somaLine = 0;
-  for (let j = 0; j < matriz[4].length; j++) {
-    somaLine += matriz[4][j];
+function sumLine4(M) {
+  let sumLine = 0;
+  for (let j = 0; j < M[4].length; j++) {
+    sumLine += M[4][j];
   }
-  return somaLine;
+  return sumLine;
 }
 
-function somaColuna2(matriz) {
-  let somaColun = 0;
-  for (let i = 0; i < matriz.length; i++) {
-    somaColun += matriz[i][1];
+function sumColun2(M) {
+  let sumColun = 0;
+  for (let i = 0; i < M.length; i++) {
+    sumColun += M[i][1];
   }
-  return somaColun;
+  return sumColun;
 }
 
-function somaDiagonalPrincipal(matriz) {
-  let somaDig = 0;
-  for (let i = 0; i < matriz.length; i++) {
-    somaDig += matriz[i][i];
+function sumMainDiagonal(M) {
+  let sumDiag = 0;
+  for (let i = 0; i < M.length; i++) {
+    sumDiag += M[i][i];
   }
-  return somaDig;
+  return sumDiag;
 }
 
-function somaTodosElementos(matriz) {
-  let somaAll = 0;
-  for (let i = 0; i < matriz.length; i++) {
-    for (let j = 0; j < matriz[i].length; j++) {
-      somaAll += matriz[i][j];
+function sumAllElements(M) {
+  let sumAll = 0;
+  for (let i = 0; i < M.length; i++) {
+    for (let j = 0; j < M[i].length; j++) {
+      sumAll += M[i][j];
     }
   }
-  return somaAll;
+  return sumAll;
 }
 
-console.log("Soma da linha 4:", somaLinha4(matriz));
-console.log("Soma da coluna 2:", somaColuna2(matriz));
-console.log("Soma da diagonal principal:", somaDiagonalPrincipal(matriz));
-console.log("Soma de todos os elementos:", somaTodosElementos(matriz));
+console.log("Resultados:")
+console.log("Soma da linha 4:", sumLine4(M));
+console.log("Soma da coluna 2:", sumColun2(M));
+console.log("Soma da diagonal principal:", sumMainDiagonal(M));
+console.log("Soma de todos os elementos:", sumAllElements(M));
